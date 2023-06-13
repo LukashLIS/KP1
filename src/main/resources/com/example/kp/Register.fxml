@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="212.0" layoutY="361.0" mnemonicParsing="false" onAction="#regist" text="Регистрация" />
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" text="Назад" />
+      <TextField fx:id="login" layoutX="76.0" layoutY="42.0"/>
+      <Label layoutX="136.0" layoutY="14.0" text="Логин" />
+      <TextField fx:id="password" layoutX="76.0" layoutY="112.0"/>
+      <Label layoutX="136.0" layoutY="84.0" text="Пароль" />
+      <TextField fx:id="FIO" layoutX="76.0" layoutY="175.0"/>
+      <Label layoutX="136.0" layoutY="147.0" text="ФИО" />
+      <TextField fx:id="Telphone" layoutX="76.0" layoutY="235.0"/>
+      <Label layoutX="136.0" layoutY="207.0" text="Телефон" />
+      <TextField fx:id="Adres" layoutX="76.0" layoutY="296.0"/>
+      <Label layoutX="136.0" layoutY="268.0" text="Адрес" />
+   </children>
+</AnchorPane>

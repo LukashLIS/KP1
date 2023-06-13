@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="window" prefHeight="572.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="table" layoutX="13.0" layoutY="14.0" prefHeight="486.0" prefWidth="1003.0" />
+      <Button layoutX="20.0" layoutY="529.0" mnemonicParsing="false" onAction="#refresh" prefHeight="19.0" prefWidth="71.0" text="Обновить" />
+      <Button layoutX="111.0" layoutY="531.0" mnemonicParsing="false" onAction="#save_button" prefHeight="15.0" prefWidth="74.0" text="Сохранить" />
+      <ComboBox fx:id="Chose_Data" layoutX="365.0" layoutY="527.0" onAction="#Change_data" prefHeight="13.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
