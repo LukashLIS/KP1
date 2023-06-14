@@ -66,13 +66,14 @@ public class PolWindow extends Window implements Initializable {
         NewHelp newWork = new NewHelp(lk);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("New_Help.fxml"));
         fxmlLoader.setController(newWork);
-        Scene scene = new Scene(fxmlLoader.load(), 300, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Stage stage = new Stage();
         stage.setTitle("Логин");
         stage.getIcons().add(new Image(new File("").getAbsolutePath()  + "\\img\\main_icon.jpg"));
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
+        refresh(actionEvent);
     }
 
     public void Chat_on(ActionEvent actionEvent){
@@ -88,6 +89,7 @@ public class PolWindow extends Window implements Initializable {
                 stage.setScene(scene);
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.showAndWait();
+                refresh(actionEvent);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

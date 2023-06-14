@@ -102,13 +102,14 @@ public class WorkerWindom extends Window implements Initializable {
         ChatWindom chatWindom = new ChatWindom(lk, Integer.parseInt(obj.get(0).toString()),new Chat(obj.get(0).toString()));
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Chat_window.fxml"));
         fxmlLoader.setController(chatWindom);
-        Scene scene = new Scene(fxmlLoader.load(), 300, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Stage stage = new Stage();
         stage.setTitle("Логин");
         stage.getIcons().add(new Image(new File("").getAbsolutePath()  + "\\img\\main_icon.jpg"));
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
+        refresh(actionEvent);
     }
 
 }

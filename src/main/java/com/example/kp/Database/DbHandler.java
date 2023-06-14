@@ -4,8 +4,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.Callback;
 import org.sqlite.JDBC;
 
@@ -61,8 +63,21 @@ public class DbHandler {
                     public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
                         return new SimpleStringProperty(param.getValue().get(j).toString());
                     }
+                }
+                );
+                col.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent>() {
+                    @Override
+                    public void handle(TableColumn.CellEditEvent cellEditEvent) {
+                        System.out.println(cellEditEvent.toString());
+                        int row = cellEditEvent.getTablePosition().getRow();
+                        int cel = cellEditEvent.getTablePosition().getColumn();
+                        ObservableList list = cellEditEvent.getTableView().getItems();
+                        ObservableList list1 = (ObservableList) list.get(row);
+                        list1.set(cel,cellEditEvent.getNewValue());
+                    }
                 });
-
+                col.setEditable(true);
+                col.setCellFactory(TextFieldTableCell.forTableColumn());
                 tableview.getColumns().addAll(col);
                 System.out.println("Column [" + i + "] ");
             }
@@ -83,6 +98,7 @@ public class DbHandler {
             }
 
             //FINALLY ADDED TO TableView
+            tableview.setEditable(true);
             tableview.setItems(data);
         } catch (Exception e) {
             e.printStackTrace();
@@ -182,6 +198,7 @@ public class DbHandler {
         }
     }
 
+
     public void ChengeDateSQL(String SQL){
         try {
             connection.createStatement().executeQuery(SQL);
@@ -201,5 +218,12 @@ public class DbHandler {
             return null;
         }
     }
+    public void Update(ObservableList list) throws SQLException {
 
+    }
+
+    public void Delete(int row) throws SQLException {
+    }
+    public void Add() throws SQLException {
+    }
 }
